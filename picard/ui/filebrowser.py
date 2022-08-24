@@ -126,6 +126,7 @@ class FileBrowser(QtWidgets.QTreeView):
         filters = []
         for exts, name in supported_formats():
             filters.extend("*" + e for e in exts)
+        filters.extend(["*.zip"])
         model.setNameFilters(filters)
         # Hide unsupported files completely
         model.setNameFilterDisables(False)
